@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>サンプルページ</title>
+</head>
+<body>
+    <script>
+        window.alert("よろしくお願いします");
+        today = new Date();
+        document.write(today);
+
+        //ボタンを押したときの一連の流れ
+        document.getElementById('fizzbuzz').addEventListener('click',function(){
+            const result = document.getElementById('result');
+            result.innerHTML = ''; //内容のクリア
+        })
+        for(let num = 1;num<=100;num++){
+            if(num % 3 === 0 && num % 5 === 0){
+                return 'fizzbuzz';
+            }else if(num % 3 === 0){
+                return 'fizz';
+            }else if(num % 5 === 0){
+                return 'buzz';
+            }else{
+                return num;
+            }
+        }
+
+        const newP = document.createElement('p');
+        newP.textContent = result
+        result.appendChild(p);
+    </script>
+    <button id="fizzbuzz">Run fizzbuzz</button>
+    <div id="result"></div>
+</body>
+</html>
