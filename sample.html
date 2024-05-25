@@ -8,31 +8,35 @@
 <body>
     <script>
         window.alert("よろしくお願いします");
-        today = new Date();
+
+        // 今日の日付を表示
+        const today = new Date();
         document.write(today);
 
-        //ボタンを押したときの一連の流れ
-        document.getElementById('fizzbuzz').addEventListener('click',function(){
-            const result = document.getElementById('result');
-            result.innerHTML = ''; //内容のクリア
-        })
-        for(let num = 1;num<=100;num++){
-            if(num % 3 === 0 && num % 5 === 0){
-                return 'fizzbuzz';
-            }else if(num % 3 === 0){
-                return 'fizz';
-            }else if(num % 5 === 0){
-                return 'buzz';
-            }else{
-                return num;
-            }
-        }
+        // ボタンを押したときの一連の流れ
+        document.getElementById('fizzbuzz').addEventListener('click', function() {
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = ''; // 内容のクリア
 
-        const newP = document.createElement('p');
-        newP.textContent = result
-        result.appendChild(p);
+            for (let num = 1; num <= 100; num++) {
+                let result = '';
+                if (num % 3 === 0 && num % 5 === 0) {
+                    result = 'FizzBuzz';
+                } else if (num % 3 === 0) {
+                    result = 'Fizz';
+                } else if (num % 5 === 0) {
+                    result = 'Buzz';
+                } else {
+                    result = num;
+                }
+
+                const newP = document.createElement('p');
+                newP.textContent = result;
+                resultDiv.appendChild(newP);
+            }
+        });
     </script>
-    <button id="fizzbuzz">Run fizzbuzz</button>
+    <button id="fizzbuzz">Run FizzBuzz</button>
     <div id="result"></div>
 </body>
 </html>
