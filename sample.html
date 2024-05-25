@@ -6,12 +6,16 @@
     <title>サンプルページ</title>
 </head>
 <body>
+    <button id="fizzbuzz">Run FizzBuzz</button>
+    <div id="result"></div>
+
     <script>
+        // ページ読み込み時にアラートを表示
         window.alert("よろしくお願いします");
 
         // 今日の日付を表示
         const today = new Date();
-        document.write(today);
+        document.write(today + "<br>");
 
         // ボタンを押したときの一連の流れ
         document.getElementById('fizzbuzz').addEventListener('click', function() {
@@ -36,7 +40,5 @@
             }
         });
     </script>
-    <button id="fizzbuzz">Run FizzBuzz</button>
-    <div id="result"></div>
 </body>
 </html>
